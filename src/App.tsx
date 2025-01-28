@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import ContactMe from './contact_me'
-import MySkills from './my_skills'
+import TechStack from './tech_stack'
 import Intro from './intro'
 import AboutMe from './about_me'
 import Footer from './footer'
@@ -71,7 +71,7 @@ function App() {
             duration={500}
             className="text-base/6 font-['Abhaya_Libre-normal'] text-white cursor-pointer hover:text-orange-200"
           >
-            My Skills
+            Tech Stack
           </Link>
           <Link 
             activeClass="active" 
@@ -132,7 +132,7 @@ function App() {
                 duration={500}
                 className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-['Abhaya_Libre-normal'] text-white hover:bg-gray-50 hover:text-cyan-900"
                 >
-                  My Skills
+                  Tech Stack
                 </Link>
                 <Link 
                 activeClass="active" 
@@ -172,13 +172,13 @@ function App() {
   </section>
 {/* end of about me section */}
 
-{/* my skills section */}
-    <section id="my-skills">
+{/* Tech Stack section */}
+    <section id="tech-stack">
     <div className="font-['Abhaya_Libre-normal']">
-      <MySkills />
+      <TechStack />
     </div>
     </section>
-{/* end of my skills section */}
+{/* end of tech stack section */}
 
 
 {/* contact me section */}

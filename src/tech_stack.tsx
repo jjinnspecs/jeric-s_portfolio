@@ -1,4 +1,4 @@
-const MySkills = () => {
+const TechStack = () => {
     return (
         <div className="p-10 "> 
         <h2 className="text-white text-3xl mb-4 text-center ">Tech Stack</h2>
@@ -105,4 +105,4 @@ const MySkills = () => {
     );
   };
   
-  export default MySkills;
+  export default TechStack;
