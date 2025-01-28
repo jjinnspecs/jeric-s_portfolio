@@ -1,0 +1,18 @@
+@import "tailwindcss";
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+a {
+  cursor: pointer;
+}
+
+footer {
+  margin-top: auto; /* This is the key to stick to the bottom */
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+}
