@@ -64,7 +64,7 @@ function App() {
           </Link>
           <Link 
             activeClass="active" 
-            to="my-skills" 
+            to="tech-stack" 
             spy={true} 
             smooth={true} 
             offset={-70} 
@@ -125,7 +125,7 @@ function App() {
                 </Link>
                 <Link 
                 activeClass="active" 
-                to="my-skills" 
+                to="tech-stack" 
                 spy={true} 
                 smooth={true} 
                 offset={-70} 
