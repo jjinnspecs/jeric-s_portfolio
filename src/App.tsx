@@ -125,7 +125,7 @@ function App() {
                 </Link>
                 <Link 
                 activeClass="active" 
-                to="tech-stack" 
+                to="tech-stacks" 
                 spy={true} 
                 smooth={true} 
                 offset={-70} 
