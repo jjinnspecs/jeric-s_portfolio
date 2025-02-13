@@ -20,7 +20,7 @@ Frontend: React.js (TypeScript), TailwindCSS
 
 State Management: React Hooks
 
-Deployment: Vercel (Planned)
+Deployment: Vercel
 
 🚀 Installation & Setup
 
@@ -41,7 +41,7 @@ Open http://localhost:5173 in your browser.
 
 🌍 Deployment
 
-This project is planned for deployment on Vercel.
+This project is deployed on Vercel.
 
 📬 Contact
 
