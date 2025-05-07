@@ -76,9 +76,9 @@ const Terminal: React.FC = () => {
         "Link: ==https://lupi.mycreativepanda.com/== \n\n\n" +
 
         "TASK MANAGER(MERN):\n" +
-        "Link: ==https://task-manager-git-main-jjinnspecs-projects.vercel.app/==\n\n"
+        "Link: ==https://task-manager-git-main-jjinnspecs-projects.vercel.app/==\n\n\n" +
 
-        "\n...or check out my GitHub: ==github.com/jjinnspecs==";
+        "...or check out my GitHub: ==github.com/jjinnspecs==";
         break;
       case 'contact':
         response = "Email me at: ==j3.cariaso@gmail.com==\nMessage me on LinkedIn: ==linkedin.com/in/jeric-cariaso==";
