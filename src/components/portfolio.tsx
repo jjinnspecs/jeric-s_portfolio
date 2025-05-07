@@ -15,7 +15,7 @@ const Terminal: React.FC = () => {
   const formatTypedText = (text: string): ReactNode => {
     return text.split(/(\*\*.*?\*\*|==.*?==)/).map((part, index) => {
       if (part.startsWith("**") && part.endsWith("**")) {
-        return <b key={index}>{part.slice(2, -2)}</b>; // Bold formatting
+        return <b key={index}>{part.slice(2, -2)}</b>;
       }
       if (part.startsWith("==") && part.endsWith("==")) {
         const content = part.slice(2, -2);
@@ -59,13 +59,26 @@ const Terminal: React.FC = () => {
         break;
       case 'about':
         response = 
-          "I'm an aspiring **Full-Stack Software Engineer**, passionate about building high-quality, scalable applications. " +
+          "I'm a **Full-Stack Software/ Web Developer**, passionate about building high-quality, scalable applications. " +
           "Proficient in both **front-end** and **back-end** development, I specialize in **MERN stack (MongoDB, Express.js, React.js, Node.js)** as well as **PHP, MySQL, and Laravel**.\n\n" +
           "I thrive on **problem-solving**, **security-focused development**, and **optimizing system performance**.\n\n" +
           "**Always eager to learn and collaborate, I'm excited to contribute to innovative projects! 🚀**";
         break;
       case 'projects':
-        response = "Check out my GitHub: ==github.com/jjinnspecs==";
+        response = "WORDPRESS WEB DESIGNS: \n" +
+        "1. **OPM-tify**\n" +
+        "Link: ==https://jjinnspecs.wordpress.com/== \n\n" +
+        
+        "2. **K&D**\n" +
+        "Link: ==https://jeric.mycreativepanda.com/webdesign2/== \n\n" +
+
+        "3. **Municipality of Lupi**\n" +
+        "Link: ==https://lupi.mycreativepanda.com/== \n\n\n" +
+
+        "TASK MANAGER(MERN):\n" +
+        "Link: ==https://task-manager-git-main-jjinnspecs-projects.vercel.app/==\n\n"
+
+        "\n...or check out my GitHub: ==github.com/jjinnspecs==";
         break;
       case 'contact':
         response = "Email me at: ==j3.cariaso@gmail.com==\nMessage me on LinkedIn: ==linkedin.com/in/jeric-cariaso==";
