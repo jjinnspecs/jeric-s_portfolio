@@ -33,6 +33,27 @@ const Terminal: React.FC = () => {
             </a>
           );
         }
+        if (content.includes('mycreativepanda.com')) {
+          return (
+            <a key={index} href={`https://${content}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">
+              {content}
+            </a>
+          );
+        }
+        if (content.includes('wordpress.com')) {
+          return (
+            <a key={index} href={`https://${content}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">
+              {content}
+            </a>
+          );
+        }
+        if (content.includes('vercel.app')) {
+          return (
+            <a key={index} href={`https://${content}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">
+              {content}
+            </a>
+          );
+        }
         if (content.includes('linkedin.com')) {
           return (
             <a key={index} href={`https://${content}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">
@@ -67,16 +88,16 @@ const Terminal: React.FC = () => {
       case 'projects':
         response = "WORDPRESS WEB DESIGNS: \n" +
         "1. **OPM-tify**\n" +
-        "Link: ==https://jjinnspecs.wordpress.com/== \n\n" +
+        "Link: ==jeric.mycreativepanda.com== \n\n" +
         
         "2. **K&D**\n" +
-        "Link: ==https://jeric.mycreativepanda.com/webdesign2/== \n\n" +
+        "Link: ==jeric.mycreativepanda.com/webdesign2/== \n\n" +
 
         "3. **Municipality of Lupi**\n" +
-        "Link: ==https://lupi.mycreativepanda.com/== \n\n\n" +
+        "Link: ==lupi.mycreativepanda.com/== \n\n\n" +
 
         "TASK MANAGER(MERN):\n" +
-        "Link: ==https://task-manager-git-main-jjinnspecs-projects.vercel.app/==\n\n\n" +
+        "Link: ==task-manager-git-main-jjinnspecs-projects.vercel.app/==\n\n\n" +
 
         "...or check out my GitHub: ==github.com/jjinnspecs==";
         break;
@@ -98,7 +119,7 @@ const Terminal: React.FC = () => {
       <div key={output.length + 1} className="text-white">
         <Typewriter
           words={[removeMarkers(response)]} // Show text without ** and == markers
-          typeSpeed={30}
+          typeSpeed={10}
           cursor
           cursorStyle="_"
           onLoopDone={() => setIsTyping(false)}
@@ -114,7 +135,7 @@ const Terminal: React.FC = () => {
         </div>,
       ]);
       setIsTyping(false);
-    }, response.length * 30);
+    }, response.length * 10);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
