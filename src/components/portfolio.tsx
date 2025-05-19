@@ -14,49 +14,72 @@ const Terminal: React.FC = () => {
 
   const formatTypedText = (text: string): ReactNode => {
     return text.split(/(\*\*.*?\*\*|==.*?==)/).map((part, index) => {
+
       if (part.startsWith("**") && part.endsWith("**")) {
         return <b key={index}>{part.slice(2, -2)}</b>;
       }
       if (part.startsWith("==") && part.endsWith("==")) {
         const content = part.slice(2, -2);
+
+              
+      if (content.match(/^\[.*\]\(.*\)$/)) {
+        const match = content.match(/^\[(.*?)\]\((.*?)\)$/);
+        if (match) {
+          const label = match[1];
+          const url = match[2].startsWith("http") ? match[2] : `https://${match[2]}`;
+          return (
+            <a key={index} href={url} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline hover:text-blue-200 transition">
+              {label}
+            </a>
+          );
+        }
+      }
+
         if (content.includes('@')) {
           return (
-            <a key={index} href={`mailto:${content}`} className="text-blue-400 underline">
+            <a key={index} href={`mailto:${content}`} className="text-blue-400 underline hover:text-blue-200 transition">
               {content}
             </a>
           );
         }
         if (content.includes('github.com')) {
           return (
-            <a key={index} href={`https://${content}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">
+            <a key={index} href={`https://${content}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline hover:text-blue-200 transition">
               {content}
             </a>
           );
         }
         if (content.includes('mycreativepanda.com')) {
           return (
-            <a key={index} href={`https://${content}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">
+            <a key={index} href={`https://${content}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline hover:text-blue-200 transition">
               {content}
             </a>
           );
         }
         if (content.includes('wordpress.com')) {
           return (
-            <a key={index} href={`https://${content}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">
+            <a key={index} href={`https://${content}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline hover:text-blue-200 transition">
               {content}
             </a>
           );
         }
         if (content.includes('vercel.app')) {
           return (
-            <a key={index} href={`https://${content}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">
+            <a key={index} href={`https://${content}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline hover:text-blue-200 transition">
+              {content}
+            </a>
+          );
+        }
+        if (content.includes('drive.google.com')) {
+          return (
+            <a key={index} href={`https://${content}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline hover:text-blue-200 transition">
               {content}
             </a>
           );
         }
         if (content.includes('linkedin.com')) {
           return (
-            <a key={index} href={`https://${content}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">
+            <a key={index} href={`https://${content}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline hover:text-blue-200 transition">
               {content}
             </a>
           );
@@ -68,7 +91,8 @@ const Terminal: React.FC = () => {
   };
 
   const removeMarkers = (text: string) => {
-    return text.replace(/\*\*/g, '').replace(/==/g, ''); // Remove ** and == markers during typing
+    return text.replace(/\*\*/g, '')
+      .replace(/==.*?==/g, '');// Remove ** and == markers during typing
   };
 
   const handleCommand = (command: string) => {
@@ -76,7 +100,7 @@ const Terminal: React.FC = () => {
     
     switch (command.toLowerCase()) {
       case 'help':
-        response = 'Available commands: help, about, projects, contact, clear';
+        response = 'Available commands: help, about, projects, certificates, resume, contact, clear';
         break;
       case 'about':
         response = 
@@ -88,20 +112,40 @@ const Terminal: React.FC = () => {
       case 'projects':
         response = "WORDPRESS WEB DESIGNS: \n" +
         "1. **OPM-tify**\n" +
-        "Link: ==jeric.mycreativepanda.com== \n\n" +
+        "==[View](jeric.mycreativepanda.com)== \n\n" +
         
         "2. **K&D**\n" +
-        "Link: ==jeric.mycreativepanda.com/webdesign2/== \n\n" +
+        "==[View](jeric.mycreativepanda.com/webdesign2/)== \n\n" +
 
         "3. **Municipality of Lupi**\n" +
-        "Link: ==lupi.mycreativepanda.com/== \n\n\n" +
+        "==[View](lupi.mycreativepanda.com/)== \n\n\n" +
 
         "TASK MANAGER(MERN):\n" +
-        "Link: ==task-manager-git-main-jjinnspecs-projects.vercel.app/==\n\n\n" +
+        "==[View](task-manager-git-main-jjinnspecs-projects.vercel.app/)==\n\n\n" +
 
         "...or check out my GitHub: ==github.com/jjinnspecs==";
         break;
-      case 'contact':
+
+      case 'certificates':
+        response = "CERTIFICATES:\n" +
+        "1. **Technical Intern - My Creative Panda INC.**\n" +
+        "Date: February 2025 - March 2025\n" +
+        "==[View](drive.google.com/file/d/13zgHr8tS5vrEtLLzt8psLcSwV1-nQdNA/view?usp=sharing)==\n\n" +
+        
+        "2. **IT Passport (IP) Certification - PhilNITS**\n" +
+        "Date: May 2023\n" +
+        "==[View](drive.google.com/file/d/1V8pmzgR4uSCZgb0ZkZkWoW-IxfBlwRCI/view?usp=sharing)==\n\n" +
+        
+        "3. **Certificate of Eligibility - Civil Service Commission**\n" +
+        "Date: August 2024\n" +
+        "==[View](drive.google.com/file/d/1H-hgByzlikqSmHbECkK0Ie878A1_DlJz/view?usp=sharing)==\n\n";
+        break;
+
+      case 'resume':
+        response = "View my resume: ==[View](drive.google.com/file/d/1JhKcUldQY9ezJAQoXRK7XjXBruz5zG1G/view?usp=sharing)==\n\n";
+        break;
+
+        case 'contact':
         response = "Email me at: ==j3.cariaso@gmail.com==\nMessage me on LinkedIn: ==linkedin.com/in/jeric-cariaso==";
         break;
       case 'clear':
@@ -145,6 +189,8 @@ const Terminal: React.FC = () => {
     }
   };
 
+
+
   return (
     <div className="h-screen bg-black text-white font-mono flex flex-col items-center justify-center p-4">
       <div id="terminal" className="w-full max-w-4xl h-[500px] bg-black border border-gray-700 shadow-lg flex flex-col">
@@ -185,7 +231,9 @@ const Terminal: React.FC = () => {
       <br />
       <div className="w-full max-w-4xl text-gray-400 text-sm mt-2 text-left">
         Commands: <span className="text-gray-400">'help'</span>, <span className="text-gray-400">'about'</span>,{" "}
-        <span className="text-gray-400">'projects'</span>, <span className="text-gray-400">'contact'</span>,{" "}
+        <span className="text-gray-400">'projects'</span>, <span className="text-gray-400">'certificates'</span>,{" "}
+        <span className="text-gray-400">'resume'</span>,{" "}
+        <span className="text-gray-400">'contact'</span>,{" "}
         <span className="text-gray-400">'clear'</span>
       </div>
     </div>
