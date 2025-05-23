@@ -142,7 +142,7 @@ const Terminal: React.FC = () => {
         break;
 
       case 'resume':
-        response = "View my resume: ==[View](drive.google.com/file/d/1JhKcUldQY9ezJAQoXRK7XjXBruz5zG1G/view?usp=sharing)==\n\n";
+        response = "View my resume: ==[View](drive.google.com/file/d/1JBcr7FbL8hOw2MQtTO2exCV_rzYLFJvE/view?usp=sharing)==\n\n";
         break;
 
         case 'contact':
