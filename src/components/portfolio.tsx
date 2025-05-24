@@ -63,6 +63,13 @@ const Terminal: React.FC = () => {
             </a>
           );
         }
+        if (content.includes('onrender.com')) {
+          return (
+            <a key={index} href={`https://${content}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline hover:text-blue-200 transition">
+              {content}
+            </a>
+          );
+        }
         if (content.includes('vercel.app')) {
           return (
             <a key={index} href={`https://${content}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline hover:text-blue-200 transition">
@@ -110,7 +117,17 @@ const Terminal: React.FC = () => {
           "**Always eager to learn and collaborate, I'm excited to contribute to innovative projects! 🚀**";
         break;
       case 'projects':
-        response = "WORDPRESS WEB DESIGNS: \n" +
+        response =
+        "PERSONAL PROJECTS:\n" +
+        "1. **Not Shopee(MERN Stack)**\n" +
+        "==[View](mern-not-shopee.onrender.com/)==\n\n" +
+        
+        
+        "2. **Task Manager(MERN Stack)**\n" +
+        "==[View](task-manager-git-main-jjinnspecs-projects.vercel.app/)==\n\n\n" +
+
+        
+        "WORDPRESS WEB DESIGNS: \n" +
         "1. **OPM-tify**\n" +
         "==[View](jeric.mycreativepanda.com)== \n\n" +
         
@@ -119,9 +136,6 @@ const Terminal: React.FC = () => {
 
         "3. **Municipality of Lupi**\n" +
         "==[View](lupi.mycreativepanda.com/)== \n\n\n" +
-
-        "TASK MANAGER(MERN):\n" +
-        "==[View](task-manager-git-main-jjinnspecs-projects.vercel.app/)==\n\n\n" +
 
         "...or check out my GitHub: ==github.com/jjinnspecs==";
         break;
